@@ -35,5 +35,11 @@ packer.init {
 
 return packer.startup(function(use)
   use "wbthomason/packer.nvim"
+  use "nvim-lua/popup.nvim"
   use "nvim-lua/plenary.nvim"
-end)
+  use "windwp/nvim-autopairs"
+  use "numToStr/Comment.nvim"
+  use "kyazdani42/nvim-web-devicons"
+  use "tamago324/lir.nvim"
+
+en)
