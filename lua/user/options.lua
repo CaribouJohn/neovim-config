@@ -46,4 +46,4 @@ km('n','<C-k>','<C-w>k',opts )
 --km('n','<C-Left>',':vertical resize -2<CR>',opts )
 
 --explorer split
-km('n','<leader>e',':Lex 30<CR>',opts )
+km('n','<leader>e',':NvimTreeToggle<CR>',opts )
