@@ -1,6 +1,7 @@
 local M = {}
 
 local servers = {
+  clangd = {},
   sumneko_lua = {},
   vimls = {},
 }
