@@ -4,6 +4,7 @@ local servers = {
   clangd = {},
   sumneko_lua = {},
   vimls = {},
+  solargraph = {},
 }
 
 local function on_attach(client, bufnr)
@@ -17,6 +18,8 @@ local function on_attach(client, bufnr)
 
   -- Configure key mappings
   require("user.lsp.keymaps").setup(client, bufnr)
+
+  print('Attaching LSP: ' .. client.name)
 end
 
 local opts = {
@@ -31,4 +34,3 @@ function M.setup()
 end
 
 return M
-

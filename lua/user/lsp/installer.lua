@@ -1,4 +1,5 @@
 local lsp_installer_servers = require "nvim-lsp-installer.servers"
+
 _G.dump = function(...)
   print(vim.inspect(...))
 end
@@ -35,7 +36,7 @@ function utils.info(msg, name)
   vim.notify(msg, vim.log.levels.INFO, { title = name })
 end
 
-
+local util = require 'lspconfig/util'
 
 local M = {}
 
@@ -48,7 +49,31 @@ function M.setup(servers, options)
         local opts = vim.tbl_deep_extend("force", options, servers[server.name] or {})
         if server.name == 'sumneko_lua' then
           opts.settings = {
-            Lua = { diagnostics = { globals = {  'vim' } } }
+            Lua = { diagnostics = { globals = { 'vim' } } }
+          }
+        end
+        if server.name == 'solargraph' then
+          opts.cmd = {
+            "solargraph",
+            "stdio"
+          }
+          opts.filetypes = {
+            "ruby"
+          }
+          opts.root_dir = util.root_pattern("Gemfile", ".git");
+          opts.flags = {
+            debounce_text_changes = 150
+          }
+          opts.settings = {
+            solargraph = {
+              autoformat = true,
+              completion = true,
+              diagnostic = true,
+              folding = true,
+              references = true,
+              rename = true,
+              symbols = true
+            }
           }
         end
         server:setup(opts)
@@ -65,5 +90,3 @@ function M.setup(servers, options)
 end
 
 return M
-
-

@@ -1,7 +1,7 @@
 -- set the options of the editor
 --
 
-vim.g.colorscheme = 'elflord'
+vim.cmd("colorscheme tokyonight")
 
 local o = vim.opt
 
@@ -34,10 +34,10 @@ local opts = { noremap = true }
 local km = vim.api.nvim_set_keymap
 
 -- move between splits
-km('n','<C-h>','<C-w>h',opts )
-km('n','<C-l>','<C-w>l',opts )
-km('n','<C-j>','<C-w>j',opts )
-km('n','<C-k>','<C-w>k',opts )
+km('n', '<C-h>', '<C-w>h', opts)
+km('n', '<C-l>', '<C-w>l', opts)
+km('n', '<C-j>', '<C-w>j', opts)
+km('n', '<C-k>', '<C-w>k', opts)
 
 -- move between splits
 --km('n','<C-Up>',':resize +2<CR>',opts )
@@ -46,4 +46,4 @@ km('n','<C-k>','<C-w>k',opts )
 --km('n','<C-Left>',':vertical resize -2<CR>',opts )
 
 --explorer split
-km('n','<leader>e',':NvimTreeToggle<CR>',opts )
+km('n', '<leader>e', ':NvimTreeToggle<CR>', opts)

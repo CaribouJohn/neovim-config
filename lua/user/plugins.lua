@@ -10,7 +10,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
   vim.cmd [[packadd packer.nvim]]
 end
 
-vim.cmd [[ 
+vim.cmd [[
  augroup packer_user_config
    autocmd!
    autocmd BufWritePost plugins.lua source <afile> | PackerSync
@@ -40,7 +40,10 @@ return packer.startup(function(use)
   use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"
   use "BurntSushi/ripgrep"
-
+  use "folke/tokyonight.nvim"
+  use "jacoborus/tender.vim"
+  use { "EdenEast/nightfox.nvim", tag = "v1.0.0" }
+  use "savq/melange"
 
   -- Treesitter
   use {
@@ -81,7 +84,7 @@ return packer.startup(function(use)
 
   use {
     'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = { { 'nvim-lua/plenary.nvim' } }
   }
 
   -- Lua
@@ -96,6 +99,10 @@ return packer.startup(function(use)
       }
     end
   }
+
+  use 'max-0406/autoclose.nvim'
+  use "McAuleyPenney/tidy.nvim"
+
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
