@@ -47,3 +47,11 @@ km('n', '<C-k>', '<C-w>k', opts)
 
 --explorer split
 km('n', '<leader>e', ':NvimTreeToggle<CR>', opts)
+
+
+--telescope
+--
+km('n' , 'ff', ':Telescope find_files<CR>',opts)
+km('n' , 'fg', ':Telescope live_grep<CR>',opts)
+km('n' , 'fb', ':Telescope buffers<CR>',opts)
+km('n' , 'fh', ':Telescope help_tags<CR>',opts)

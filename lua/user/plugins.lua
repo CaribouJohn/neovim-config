@@ -101,7 +101,6 @@ return packer.startup(function(use)
     end
   }
 
-  use 'max-0406/autoclose.nvim'
   use "McAuleyPenney/tidy.nvim"
 
   if PACKER_BOOTSTRAP then
