@@ -46,6 +46,15 @@ return packer.startup(function(use)
   use { "EdenEast/nightfox.nvim", tag = "v1.0.0" }
   use "savq/melange"
 
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
+
+  use {
+    'romgrk/barbar.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons' }
+  }
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",

@@ -7,7 +7,7 @@ local o = vim.opt
 
 o.number = true
 o.clipboard = 'unnamedplus'
--- o.mouse = 'a'
+ o.mouse = 'a'
 o.shiftwidth = 2
 o.tabstop = 2
 o.expandtab = true
@@ -55,3 +55,5 @@ km('n' , 'ff', ':Telescope find_files<CR>',opts)
 km('n' , 'fg', ':Telescope live_grep<CR>',opts)
 km('n' , 'fb', ':Telescope buffers<CR>',opts)
 km('n' , 'fh', ':Telescope help_tags<CR>',opts)
+
+require('lualine').setup()
