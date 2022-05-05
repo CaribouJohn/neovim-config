@@ -7,7 +7,7 @@ local o = vim.opt
 
 o.number = true
 o.clipboard = 'unnamedplus'
- o.mouse = 'a'
+o.mouse = 'a'
 o.shiftwidth = 2
 o.tabstop = 2
 o.expandtab = true
@@ -39,21 +39,15 @@ km('n', '<C-l>', '<C-w>l', opts)
 km('n', '<C-j>', '<C-w>j', opts)
 km('n', '<C-k>', '<C-w>k', opts)
 
--- move between splits
---km('n','<C-Up>',':resize +2<CR>',opts )
---km('n','<C-Down>',':resize -2<CR>',opts )
---km('n','<C-Right>',':vertical resize +2<CR>',opts )
---km('n','<C-Left>',':vertical resize -2<CR>',opts )
-
 --explorer split
 km('n', '<leader>e', ':NvimTreeToggle<CR>', opts)
 
 
 --telescope
 --
-km('n' , 'ff', ':Telescope find_files<CR>',opts)
-km('n' , 'fg', ':Telescope live_grep<CR>',opts)
-km('n' , 'fb', ':Telescope buffers<CR>',opts)
-km('n' , 'fh', ':Telescope help_tags<CR>',opts)
+km('n', 'ff', ':Telescope find_files<CR>', opts)
+km('n', 'fg', ':Telescope live_grep<CR>', opts)
+km('n', 'fb', ':Telescope buffers<CR>', opts)
+km('n', 'fh', ':Telescope help_tags<CR>', opts)
 
 require('lualine').setup()
