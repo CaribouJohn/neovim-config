@@ -1,6 +1,12 @@
 local M = {}
 
 local servers = {
+  jsonls = {},
+  pyright = {},
+  yamlls = {},
+  cmake = {},
+  bashls = {},
+  solargraph = {},
   clangd = {},
   sumneko_lua = {
     settings = {
