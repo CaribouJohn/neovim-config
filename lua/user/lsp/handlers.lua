@@ -1,15 +1,13 @@
 local fn, lsp = vim.fn, vim.lsp
 
--- lsp.handlers["textDocument/hover"] = lsp.with(lsp.handlers.hover, {
-  -- border = Util.borders,
--- })
---
--- lsp.handlers["textDocument/signatureHelp"] = lsp.with(
-  -- lsp.handlers.signature_help,
-  -- {
-    -- border = Util.borders,
-  -- }
--- )
+ lsp.handlers["textDocument/hover"] = lsp.with(lsp.handlers.hover, {
+ })
+
+ lsp.handlers["textDocument/signatureHelp"] = lsp.with(
+   lsp.handlers.signature_help,
+   {
+   }
+ )
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] =
   function(_, _, params, client_id, _)

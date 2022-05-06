@@ -32,7 +32,6 @@ packer.init {
 }
 
 return packer.startup(function(use)
-  use "AndrewRadev/bufferize.vim"
   use "wbthomason/packer.nvim"
   use "nvim-lua/popup.nvim"
   use "nvim-lua/plenary.nvim"
@@ -45,6 +44,7 @@ return packer.startup(function(use)
   use "jacoborus/tender.vim"
   use { "EdenEast/nightfox.nvim", tag = "v1.0.0" }
   use "savq/melange"
+  use "AndrewRadev/bufferize.vim"
 
   use {
     'nvim-lualine/lualine.nvim',
@@ -113,20 +113,28 @@ return packer.startup(function(use)
   use "McAuleyPenney/tidy.nvim"
 
   --cmp
-
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
+  --use 'petertriho/cmp-git'
+
   use 'hrsh7th/nvim-cmp'
   use 'saadparwaiz1/cmp_luasnip'
 
   use 'L3MON4D3/Luasnip'
   use 'rafamadriz/friendly-snippets'
 
-  use 'lewis6991/gitsigns.nvim'
+  --use 'lewis6991/gitsigns.nvim'
 
-  --vim.opt.completeteopt = { "menu" , "menuone" , "noselect" }
+  use {
+    "Acksld/nvim-neoclip.lua",
+    requires = 'nvim-telescope/telescope.nvim',
+    config = function()
+      require('neoclip').setup{}
+    end,
+  }
+  vim.opt.completeopt = { "menu" , "menuone" , "noselect" }
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()
